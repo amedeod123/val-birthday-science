@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Why This Gift Is Backed by Science</title>
+<title>Happy Birthday Val</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -14,96 +14,409 @@
     color: #2d2d2d;
     background: #faf8f5;
     line-height: 1.8;
+    overflow-x: hidden;
   }
 
+  /* ─── HERO ─── */
   .hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    color: white;
-    text-align: center;
-    padding: 80px 24px 70px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a0a14;
   }
 
-  .hero p.label {
-    font-size: 12px;
-    letter-spacing: 4px;
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(180, 120, 255, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(255, 100, 130, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 0%, rgba(100, 150, 255, 0.1) 0%, transparent 50%);
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 60px 24px;
+    z-index: 2;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 20px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 28px;
   }
 
   .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 6vw, 54px);
+    font-size: clamp(38px, 7vw, 64px);
     font-weight: 700;
-    line-height: 1.2;
-    max-width: 700px;
-    margin: 0 auto 20px;
+    color: white;
+    line-height: 1.15;
+    max-width: 750px;
+    margin: 0 auto 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    background: linear-gradient(135deg, #f8a4b8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .hero .subtitle {
     font-size: 17px;
     font-weight: 300;
-    color: rgba(255,255,255,0.7);
-    max-width: 500px;
+    color: rgba(255,255,255,0.5);
+    max-width: 480px;
     margin: 0 auto;
   }
 
+  .scroll-hint {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.2);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+  }
+
+  /* ─── CONTAINER ─── */
   .container {
-    max-width: 680px;
+    max-width: 720px;
     margin: 0 auto;
     padding: 0 24px;
   }
 
-  .intro {
-    padding: 60px 0 40px;
+  .container-wide {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
   }
 
-  .intro p {
-    font-size: 18px;
+  /* ─── PHOTO GALLERY ─── */
+  .gallery-section {
+    padding: 80px 0 60px;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .photo-grid .photo-card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .photo-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .photo-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .photo-card.tall {
+    aspect-ratio: 3/4;
+  }
+
+  .photo-card.wide {
+    aspect-ratio: 4/3;
+    max-height: 420px;
+  }
+
+  .photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 20px 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  /* ─── INTRO / ESSAYS ─── */
+  .intro-section {
+    padding: 70px 0 50px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #b0b0b0;
+    margin-bottom: 16px;
+  }
+
+  .intro-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 28px;
+    line-height: 1.3;
+  }
+
+  .intro-section p {
+    font-size: 17px;
     font-weight: 300;
     color: #555;
     line-height: 1.9;
     margin-bottom: 24px;
   }
 
-  .intro p:first-of-type::first-letter {
+  .intro-section p:first-of-type::first-letter {
     font-family: 'Playfair Display', serif;
-    font-size: 56px;
+    font-size: 58px;
     float: left;
     line-height: 1;
     margin-right: 10px;
-    margin-top: 4px;
+    margin-top: 6px;
     color: #0f3460;
     font-weight: 700;
   }
 
   .divider {
     text-align: center;
-    padding: 10px 0 40px;
-    color: #ccc;
-    font-size: 20px;
-    letter-spacing: 12px;
+    padding: 30px 0;
+    color: #ddd;
+    font-size: 18px;
+    letter-spacing: 14px;
   }
 
-  h2 {
+  /* ─── PRODUCT SECTION ─── */
+  .product-section {
+    padding: 60px 0;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.06);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+  }
+
+  .product-image {
+    background: linear-gradient(135deg, #fef2f2, #fce7f3);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-image img {
+    max-width: 280px;
+    width: 100%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+  }
+
+  .product-details {
+    padding: 48px 40px;
+  }
+
+  .product-details h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 24px;
+    font-size: 26px;
+    margin-bottom: 8px;
     color: #1a1a2e;
   }
 
-  .studies {
-    padding-bottom: 50px;
+  .product-tag {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .product-details p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .product-features {
+    list-style: none;
+    margin-top: 16px;
+  }
+
+  .product-features li {
+    font-size: 14px;
+    color: #555;
+    padding: 6px 0;
+    padding-left: 24px;
+    position: relative;
+  }
+
+  .product-features li::before {
+    content: '\\2713';
+    position: absolute;
+    left: 0;
+    color: #c084fc;
+    font-weight: 700;
+  }
+
+  /* ─── STATS ─── */
+  .stats-section {
+    padding: 50px 0;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .stat-box {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .stat-box .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #0f3460, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stat-box .label {
+    font-size: 13px;
+    color: #999;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* ─── LOOKSMAXXING SECTION ─── */
+  .looksmax-section {
+    padding: 60px 0;
+  }
+
+  .looksmax-banner {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #0f3460 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .looksmax-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+  }
+
+  .looksmax-text {
+    padding: 48px 40px;
+    color: white;
+  }
+
+  .looksmax-text .tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 12px;
+  }
+
+  .looksmax-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .looksmax-text p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+  }
+
+  .looksmax-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    height: 100%;
+  }
+
+  .looksmax-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ─── STUDIES ─── */
+  .studies-section {
+    padding: 60px 0 50px;
+  }
+
+  .studies-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    color: #1a1a2e;
   }
 
   .study-card {
     background: white;
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 32px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
-    border-left: 4px solid #0f3460;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    border-left: 4px solid;
+    border-image: linear-gradient(to bottom, #c084fc, #0f3460) 1;
+    transition: transform 0.2s ease;
+  }
+
+  .study-card:hover {
+    transform: translateY(-2px);
   }
 
   .study-card h3 {
@@ -115,156 +428,322 @@
 
   .study-card p {
     font-size: 15px;
-    color: #555;
+    color: #666;
     line-height: 1.8;
     margin-bottom: 10px;
   }
 
   .study-card .source {
     font-size: 13px;
-    color: #999;
+    color: #aaa;
   }
 
   .study-card .source a {
-    color: #0f3460;
+    color: #7c3aed;
     text-decoration: none;
-    border-bottom: 1px dotted #0f3460;
+    border-bottom: 1px dotted #c084fc;
+    transition: color 0.2s;
   }
 
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    padding: 40px 0 50px;
-  }
-
-  .stat-box {
-    background: white;
-    border-radius: 12px;
-    padding: 28px 20px;
-    text-align: center;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
-  }
-
-  .stat-box .number {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    font-weight: 700;
+  .study-card .source a:hover {
     color: #0f3460;
   }
 
-  .stat-box .label {
-    font-size: 13px;
-    color: #888;
-    margin-top: 6px;
-    line-height: 1.4;
+  /* ─── EXPERTS ─── */
+  .experts-section {
+    padding: 40px 0 60px;
   }
 
-  .experts {
-    padding-bottom: 50px;
+  .experts-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    color: #1a1a2e;
   }
 
   .expert-quote {
     background: white;
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 28px 32px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    margin-bottom: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
     position: relative;
+    overflow: hidden;
   }
 
   .expert-quote::before {
-    content: '\201C';
+    content: '\\201C';
     font-family: 'Playfair Display', serif;
-    font-size: 60px;
-    color: #ddd;
+    font-size: 70px;
+    color: #f0e6ff;
     position: absolute;
-    top: 10px;
-    left: 20px;
+    top: 5px;
+    left: 18px;
     line-height: 1;
   }
 
   .expert-quote p {
     font-size: 15px;
     color: #555;
-    padding-left: 30px;
+    padding-left: 34px;
     line-height: 1.8;
+    font-style: italic;
   }
 
   .expert-quote .attribution {
     font-size: 13px;
-    color: #0f3460;
-    font-weight: 500;
-    padding-left: 30px;
+    color: #7c3aed;
+    font-weight: 600;
+    padding-left: 34px;
     margin-top: 8px;
+    font-style: normal;
   }
 
+  /* ─── DOG SECTION ─── */
+  .dog-section {
+    padding: 40px 0 60px;
+    text-align: center;
+  }
+
+  .dog-section img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    border: 6px solid white;
+    margin-bottom: 20px;
+  }
+
+  .dog-section p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #888;
+    font-style: italic;
+  }
+
+  /* ─── FOOTER ─── */
   .footer {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #2d1b4e 100%);
     color: white;
     text-align: center;
-    padding: 60px 24px;
-    margin-top: 20px;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
   }
 
-  .footer p {
+  .footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(192, 132, 252, 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 50%, rgba(248, 164, 184, 0.08) 0%, transparent 60%);
+  }
+
+  .footer-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 400;
-    opacity: 0.9;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 10px;
   }
 
   .footer .heart {
-    font-size: 32px;
+    font-size: 40px;
     display: block;
-    margin-top: 16px;
+    margin-top: 20px;
+    animation: heartbeat 1.5s ease-in-out infinite;
   }
 
-  @media (max-width: 600px) {
+  .footer .note {
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 30px;
+    font-weight: 300;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+  }
+
+  /* ─── CHILDHOOD PHOTO ─── */
+  .childhood-section {
+    padding: 50px 0 20px;
+    text-align: center;
+  }
+
+  .childhood-frame {
+    display: inline-block;
+    background: white;
+    padding: 16px 16px 40px;
+    border-radius: 4px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+  }
+
+  .childhood-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
+
+  .childhood-frame img {
+    width: 240px;
+    border-radius: 2px;
+    display: block;
+  }
+
+  .childhood-frame .caption {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #999;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .product-card { grid-template-columns: 1fr; }
+    .product-image { padding: 30px; }
+    .product-details { padding: 30px; }
+    .looksmax-content { grid-template-columns: 1fr; }
+    .looksmax-text { padding: 30px; }
+    .photo-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: 1fr; }
-    .study-card { padding: 24px; }
-    .hero { padding: 60px 24px 50px; }
+    .hero { min-height: 80vh; }
   }
 </style>
 </head>
 <body>
 
+<!-- ═══ HERO ═══ -->
 <div class="hero">
-  <p class="label">A Birthday Investigation</p>
-  <h1>Your Gift Is Backed by Real Science</h1>
-  <p class="subtitle">Yes, I did the research. No, it's not just a TikTok trend.</p>
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-label">A Birthday Investigation</p>
+    <h1>Your Gift Is Backed by <em>Real Science</em></h1>
+    <p class="subtitle">Yes, I did the research. No, it's not just a TikTok trend.</p>
+  </div>
+  <div class="scroll-hint">scroll down</div>
 </div>
 
-<div class="container">
-
-  <div class="intro">
-    <p>Before you think this is just another viral beauty gadget that'll collect dust next to a jade roller, let me stop you right there. LED light therapy isn't some influencer-invented gimmick that got popular because someone with veneers said it changed their life. It's a legitimate, clinically studied treatment that dermatologists have been using in their offices for years. The TheraFace Mask Glo just brings that same technology home in a way that actually works — and looks kind of futuristic while doing it.</p>
-
-    <p>Here's what's happening under those 504 tiny lights: red light at 630 nanometers penetrates your skin and tells your cells to wake up and start producing more collagen — the protein that keeps skin firm, smooth, and youthful. Near-infrared light goes even deeper, boosting elastin and kickstarting cellular repair at a level you can't get from a serum. Blue light handles acne by targeting the bacteria that cause breakouts. It's not magic. It's photobiology, and there are peer-reviewed studies in major medical journals proving it works.</p>
-
-    <p>The TheraFace Mask Glo specifically ran the largest clinical study of any LED mask on the market — 104 real people, 12 weeks, measurable results. Eighty percent saw fewer fine lines. Eighty-seven percent said their skin felt tighter. It's FDA cleared. It takes 12 minutes. And honestly, you deserve something that's both a little luxurious and actually effective. So here's the proof. Happy birthday.</p>
-  </div>
-
-  <div class="divider">- - -</div>
-
-  <div class="stats">
-    <div class="stat-box">
-      <div class="number">80%</div>
-      <div class="label">saw improvement in fine lines</div>
+<!-- ═══ PHOTO GALLERY ═══ -->
+<div class="gallery-section">
+  <div class="photo-grid">
+    <div class="photo-card wide">
+      <img src="val-dinner.jpg" alt="Val at dinner" loading="lazy">
+      <div class="photo-caption">Always glowing, even before the mask</div>
     </div>
-    <div class="stat-box">
-      <div class="number">87%</div>
-      <div class="label">reported tighter, firmer skin</div>
+    <div class="photo-card tall">
+      <img src="couple-bar.jpg" alt="Us" loading="lazy">
     </div>
-    <div class="stat-box">
-      <div class="number">86%</div>
-      <div class="label">saw more radiant complexion</div>
+    <div class="photo-card tall">
+      <img src="couple-selfie.jpg" alt="Us" loading="lazy">
     </div>
   </div>
+</div>
 
-  <h2>The Clinical Studies</h2>
+<!-- ═══ INTRO ESSAY ═══ -->
+<div class="intro-section">
+  <div class="container">
+    <p class="section-label">The Case for This Gift</p>
+    <h2>Why This Isn't Just Another Beauty Gadget</h2>
 
-  <div class="studies">
+    <p>Before you think this is just another viral beauty gadget that'll collect dust next to a jade roller, let me stop you right there. LED light therapy isn't some influencer-invented gimmick that got popular because someone with veneers said it changed their life. It's a legitimate, clinically studied treatment that dermatologists have been using in their offices for years. The TheraFace Mask Glo just brings that same technology home in a way that actually works &mdash; and looks kind of futuristic while doing it. This is the kind of thing you'd pay hundreds per session for at a med spa, except now you own the whole thing and can use it in your pajamas.</p>
+
+    <p>Here's what's happening under those 504 tiny lights: red light at 630 nanometers penetrates your skin and tells your cells to wake up and start producing more collagen &mdash; the protein that keeps skin firm, smooth, and youthful. Near-infrared light goes even deeper, boosting elastin and kickstarting cellular repair at a level you can't get from a serum or a cream. Blue light handles acne by targeting the bacteria that cause breakouts. This isn't marketing copy from an Instagram ad. It's photobiology &mdash; the study of how light interacts with living organisms &mdash; and there are peer-reviewed studies in major medical journals proving it works.</p>
+
+    <p>The TheraFace Mask Glo specifically ran the largest clinical study of any LED mask on the market: 104 real people, 12 weeks, measurable results. Eighty percent saw fewer fine lines. Eighty-seven percent said their skin felt tighter. It's FDA cleared, takes only 12 minutes per session, and comes with a built-in scalp massage that honestly just feels incredible. You deserve something that's both a little luxurious and actually, provably effective. So here's the proof.</p>
+  </div>
+</div>
+
+<div class="divider">&mdash;&mdash;&mdash;</div>
+
+<!-- ═══ PRODUCT ═══ -->
+<div class="product-section">
+  <div class="container-wide">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="product.jpg" alt="TheraFace Mask Glo">
+      </div>
+      <div class="product-details">
+        <span class="product-tag">FDA Cleared</span>
+        <h3>TheraFace Mask Glo</h3>
+        <p>By Therabody &mdash; the same company trusted by professional athletes, physical therapists, and dermatologists worldwide.</p>
+        <ul class="product-features">
+          <li>504 medical-grade LEDs (red, blue, near-infrared)</li>
+          <li>12-minute sessions &mdash; fits into any routine</li>
+          <li>Built-in vibrating scalp massage</li>
+          <li>Cordless, lightweight, breathable design</li>
+          <li>Largest clinical study of any LED mask</li>
+          <li>Clinically proven across 7 skin metrics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats-section">
+  <div class="container">
+    <div class="stats">
+      <div class="stat-box">
+        <div class="number">80%</div>
+        <div class="label">saw improvement in fine lines</div>
+      </div>
+      <div class="stat-box">
+        <div class="number">87%</div>
+        <div class="label">reported tighter, firmer skin</div>
+      </div>
+      <div class="stat-box">
+        <div class="number">86%</div>
+        <div class="label">saw more radiant complexion</div>
+      </div>
+    </div>
+    <p style="text-align: center; font-size: 12px; color: #bbb; margin-top: 12px;">Source: 12-week clinical trial, 104 participants &mdash; <a href="https://www.therabody.com/blogs/news/the-clinical-findings-behind-theraface-mask-glo-the-largest-study-of-led-masks-on-the-market" target="_blank" style="color: #bbb;">Therabody Research</a></p>
+  </div>
+</div>
+
+<!-- ═══ LOOKSMAXXING / CLAV ═══ -->
+<div class="looksmax-section">
+  <div class="container-wide">
+    <div class="looksmax-banner">
+      <div class="looksmax-content">
+        <div class="looksmax-text">
+          <p class="tag">The Movement</p>
+          <h3>Even the Looksmaxxers Agree</h3>
+          <p>LED light therapy isn't just for skincare enthusiasts &mdash; it's become a core tool in the looksmaxxing community. Clavicular, the internet's most famous looksmaxxer who went from TikTok to walking New York Fashion Week, has helped popularize the idea that optimizing your appearance is a science, not vanity. Red light therapy is one of the most recommended protocols in the space because it's non-invasive, backed by clinical data, and actually delivers visible results. If the guy who turned self-improvement into a runway career co-signs the science, you know it's legit.</p>
+        </div>
+        <div class="looksmax-images">
+          <img src="clav1.jpg" alt="Clavicular" loading="lazy">
+          <img src="clav2.jpg" alt="Clavicular at NYFW" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CHILDHOOD PHOTO ═══ -->
+<div class="childhood-section">
+  <div class="childhood-frame">
+    <img src="val-kid.jpg" alt="Little Val">
+    <p class="caption">Always been beautiful &hearts;</p>
+  </div>
+</div>
+
+<!-- ═══ CLINICAL STUDIES ═══ -->
+<div class="studies-section">
+  <div class="container">
+    <p class="section-label">The Receipts</p>
+    <h2>Clinical Studies</h2>
 
     <div class="study-card">
       <h3>Collagen Increase & Wrinkle Reduction</h3>
@@ -275,47 +754,60 @@
     <div class="study-card">
       <h3>Reversing Visible Signs of Aging</h3>
       <p>A photobiomodulation study using red LEDs (630 nm) over 3 months confirmed that red light therapy can reverse visible signs of skin aging, with measurable improvements in texture, tone, and elasticity.</p>
-      <p class="source">Source: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10311288/" target="_blank">PMC — Photobiomodulation Research</a></p>
+      <p class="source">Source: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10311288/" target="_blank">PMC &mdash; Photobiomodulation Research</a></p>
     </div>
 
     <div class="study-card">
       <h3>Skin Elasticity & Rejuvenation</h3>
       <p>A multi-center, randomized, double-blind, sham-controlled study found LED and infrared phototherapy to be effective, safe, well-tolerated, and painless for skin rejuvenation. Skin elasticity was significantly higher in the LED group at 6- and 8-week follow-ups.</p>
-      <p class="source">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/39960921/" target="_blank">PubMed — Randomized Controlled Trial</a></p>
+      <p class="source">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/39960921/" target="_blank">PubMed &mdash; Randomized Controlled Trial</a></p>
     </div>
 
     <div class="study-card">
       <h3>How It Works at the Cellular Level</h3>
-      <p>Red and near-infrared light is absorbed by mitochondria in skin cells, boosting cellular energy (ATP) production. This stimulates fibroblasts to produce more collagen and elastin — the proteins responsible for firm, youthful skin.</p>
+      <p>Red and near-infrared light is absorbed by mitochondria in skin cells, boosting cellular energy (ATP) production. This stimulates fibroblasts to produce more collagen and elastin &mdash; the proteins responsible for firm, youthful skin.</p>
       <p class="source">Source: <a href="https://med.stanford.edu/news/insights/2025/02/red-light-therapy-skin-hair-medical-clinics.html" target="_blank">Stanford Medicine</a></p>
     </div>
-
   </div>
+</div>
 
-  <h2>What the Experts Say</h2>
+<!-- ═══ EXPERT QUOTES ═══ -->
+<div class="experts-section">
+  <div class="container">
+    <h2>What the Experts Say</h2>
 
-  <div class="experts">
     <div class="expert-quote">
       <p>LED light therapy is a non-invasive treatment that has been proven to help with skin rejuvenation, acne, and inflammation.</p>
-      <div class="attribution">— Cleveland Clinic</div>
+      <div class="attribution">&mdash; Cleveland Clinic</div>
     </div>
 
     <div class="expert-quote">
       <p>Clinical studies have shown that LED face masks can benefit the skin. Consistent use over weeks is key to seeing real, lasting results.</p>
-      <div class="attribution">— Mayo Clinic Press</div>
+      <div class="attribution">&mdash; Mayo Clinic Press</div>
     </div>
 
     <div class="expert-quote">
-      <p>The TheraFace Mask Glo is backed by the largest clinical study of any LED mask on the market — 104 participants over 12 weeks with clinically measurable improvements across every skin metric tested.</p>
-      <div class="attribution">— Therabody Clinical Research</div>
+      <p>The TheraFace Mask Glo is backed by the largest clinical study of any LED mask on the market &mdash; 104 participants over 12 weeks with clinically measurable improvements across every skin metric tested.</p>
+      <div class="attribution">&mdash; Therabody Clinical Research</div>
     </div>
   </div>
-
 </div>
 
+<!-- ═══ DOG ═══ -->
+<div class="dog-section">
+  <div class="container">
+    <img src="dog.jpg" alt="The pup" loading="lazy">
+    <p>"I also approve of this gift."</p>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
 <div class="footer">
-  <p>Happy Birthday, Val</p>
-  <span class="heart">&hearts;</span>
+  <div class="footer-content">
+    <h2>Happy Birthday, Val</h2>
+    <span class="heart">&hearts;</span>
+    <p class="note">Here's to 32 &mdash; and looking even better than 31.</p>
+  </div>
 </div>
 
 </body>
