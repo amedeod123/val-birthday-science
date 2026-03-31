@@ -198,11 +198,11 @@
 
   .intro-section p:first-of-type::first-letter {
     font-family: 'Playfair Display', serif;
-    font-size: 58px;
+    font-size: 52px;
     float: left;
-    line-height: 1;
-    margin-right: 10px;
-    margin-top: 6px;
+    line-height: 0.8;
+    margin-right: 8px;
+    margin-top: 8px;
     color: #0f3460;
     font-weight: 700;
   }
@@ -476,28 +476,34 @@
     content: '\\201C';
     font-family: 'Playfair Display', serif;
     font-size: 70px;
-    color: #f0e6ff;
+    color: rgba(192, 132, 252, 0.1);
     position: absolute;
-    top: 5px;
+    top: -5px;
     left: 18px;
     line-height: 1;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .expert-quote p {
     font-size: 15px;
     color: #555;
-    padding-left: 34px;
+    padding-left: 10px;
     line-height: 1.8;
     font-style: italic;
+    position: relative;
+    z-index: 1;
   }
 
   .expert-quote .attribution {
     font-size: 13px;
     color: #7c3aed;
     font-weight: 600;
-    padding-left: 34px;
+    padding-left: 10px;
     margin-top: 8px;
     font-style: normal;
+    position: relative;
+    z-index: 1;
   }
 
   /* ─── DOG SECTION ─── */
