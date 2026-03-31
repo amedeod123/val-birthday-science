@@ -144,14 +144,9 @@
     transform: scale(1.03);
   }
 
-  .photo-card.tall {
-    aspect-ratio: 3/4;
-  }
-
-  .photo-card.wide {
-    aspect-ratio: 4/3;
-    max-height: 420px;
-  }
+  .photo-card.tall { aspect-ratio: 3/4; }
+  .photo-card.wide { aspect-ratio: 4/3; max-height: 420px; }
+  .photo-card.square { aspect-ratio: 1/1; }
 
   .photo-caption {
     position: absolute;
@@ -216,9 +211,7 @@
   }
 
   /* ─── PRODUCT SECTION ─── */
-  .product-section {
-    padding: 60px 0;
-  }
+  .product-section { padding: 60px 0; }
 
   .product-card {
     background: white;
@@ -245,9 +238,7 @@
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
   }
 
-  .product-details {
-    padding: 48px 40px;
-  }
+  .product-details { padding: 48px 40px; }
 
   .product-details h3 {
     font-family: 'Playfair Display', serif;
@@ -276,16 +267,12 @@
     margin-bottom: 16px;
   }
 
-  .product-features {
-    list-style: none;
-    margin-top: 16px;
-  }
+  .product-features { list-style: none; margin-top: 16px; }
 
   .product-features li {
     font-size: 14px;
     color: #555;
-    padding: 6px 0;
-    padding-left: 24px;
+    padding: 6px 0 6px 24px;
     position: relative;
   }
 
@@ -298,9 +285,7 @@
   }
 
   /* ─── STATS ─── */
-  .stats-section {
-    padding: 50px 0;
-  }
+  .stats-section { padding: 50px 0; }
 
   .stats {
     display: grid;
@@ -334,15 +319,12 @@
   }
 
   /* ─── LOOKSMAXXING SECTION ─── */
-  .looksmax-section {
-    padding: 60px 0;
-  }
+  .looksmax-section { padding: 60px 0; }
 
   .looksmax-banner {
     background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #0f3460 100%);
     border-radius: 20px;
     overflow: hidden;
-    position: relative;
   }
 
   .looksmax-content {
@@ -391,10 +373,96 @@
     object-fit: cover;
   }
 
-  /* ─── STUDIES ─── */
-  .studies-section {
-    padding: 60px 0 50px;
+  /* ─── GLOW METER ─── */
+  .glow-meter-section {
+    padding: 50px 0;
   }
+
+  .glow-meter-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    text-align: center;
+  }
+
+  .glow-meter-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+  }
+
+  .glow-meter-card .subtitle {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 28px;
+  }
+
+  .meter-track {
+    background: #f0f0f0;
+    border-radius: 20px;
+    height: 36px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .meter-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #c084fc, #f8a4b8, #fbbf24);
+    animation: fillMeter 2s ease-out forwards;
+    width: 0%;
+  }
+
+  @keyframes fillMeter {
+    0% { width: 0%; }
+    100% { width: 99%; }
+  }
+
+  .meter-fill.maxed {
+    animation: fillMeterMax 2.5s ease-out forwards;
+  }
+
+  @keyframes fillMeterMax {
+    0% { width: 0%; }
+    60% { width: 99%; }
+    100% { width: 100%; }
+  }
+
+  .meter-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .meter-row {
+    margin-bottom: 24px;
+  }
+
+  .meter-row-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 6px;
+    text-align: left;
+  }
+
+  .meter-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #c084fc;
+    text-align: right;
+    margin-bottom: 4px;
+  }
+
+  /* ─── STUDIES ─── */
+  .studies-section { padding: 60px 0 50px; }
 
   .studies-section h2 {
     font-family: 'Playfair Display', serif;
@@ -415,9 +483,7 @@
     transition: transform 0.2s ease;
   }
 
-  .study-card:hover {
-    transform: translateY(-2px);
-  }
+  .study-card:hover { transform: translateY(-2px); }
 
   .study-card h3 {
     font-family: 'Playfair Display', serif;
@@ -433,26 +499,16 @@
     margin-bottom: 10px;
   }
 
-  .study-card .source {
-    font-size: 13px;
-    color: #aaa;
-  }
+  .study-card .source { font-size: 13px; color: #aaa; }
 
   .study-card .source a {
     color: #7c3aed;
     text-decoration: none;
     border-bottom: 1px dotted #c084fc;
-    transition: color 0.2s;
-  }
-
-  .study-card .source a:hover {
-    color: #0f3460;
   }
 
   /* ─── EXPERTS ─── */
-  .experts-section {
-    padding: 40px 0 60px;
-  }
+  .experts-section { padding: 40px 0 60px; }
 
   .experts-section h2 {
     font-family: 'Playfair Display', serif;
@@ -473,7 +529,7 @@
   }
 
   .expert-quote::before {
-    content: '"';
+    content: '\u201C';
     font-family: 'Playfair Display', serif;
     font-size: 70px;
     color: rgba(192, 132, 252, 0.1);
@@ -506,27 +562,361 @@
     z-index: 1;
   }
 
-  /* ─── DOG SECTION ─── */
-  .dog-section {
-    padding: 40px 0 60px;
+  /* ─── DOG REVIEW SECTION ─── */
+  .dog-review-section {
+    padding: 60px 0;
+  }
+
+  .dog-review-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.06);
+  }
+
+  .dog-review-header {
+    background: linear-gradient(135deg, #fef9c3, #fde68a);
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .dog-review-header img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .dog-review-header .reviewer-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #1a1a2e;
+  }
+
+  .dog-review-header .reviewer-info .verified {
+    font-size: 11px;
+    color: #2e7d32;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .dog-review-body {
+    padding: 28px 32px;
+  }
+
+  .stars {
+    color: #fbbf24;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+
+  .dog-review-body p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+
+  .dog-review-body .helpful {
+    font-size: 12px;
+    color: #bbb;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+    margin-top: 16px;
+  }
+
+  .dog-photos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+
+  .dog-photos img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  /* ─── CHILDHOOD PHOTOS ─── */
+  .childhood-section {
+    padding: 50px 0 20px;
     text-align: center;
   }
 
-  .dog-section img {
-    width: 260px;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-    border: 6px solid white;
+  .childhood-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .childhood-frame {
+    display: inline-block;
+    background: white;
+    padding: 14px 14px 36px;
+    border-radius: 4px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .childhood-frame:first-child { transform: rotate(-3deg); }
+  .childhood-frame:last-child { transform: rotate(2deg); }
+
+  .childhood-frame:hover { transform: rotate(0deg) scale(1.05) !important; }
+
+  .childhood-frame img {
+    width: 200px;
+    border-radius: 2px;
+    display: block;
+  }
+
+  .childhood-frame .caption {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #999;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  /* ─── EASTER EGG MODAL ─── */
+  .easter-egg-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .easter-egg-overlay.show { display: flex; }
+
+  .easter-egg-msg {
+    background: white;
+    border-radius: 20px;
+    padding: 48px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: popIn 0.3s ease-out;
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .easter-egg-msg h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #1a1a2e;
+  }
+
+  .easter-egg-msg p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .easter-egg-msg .close-btn {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #c084fc, #f8a4b8);
+    color: white;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ─── COST BENEFIT ─── */
+  .cost-section { padding: 50px 0; }
+
+  .cost-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  }
+
+  .cost-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #1a1a2e;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .cost-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .cost-table th {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  .cost-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #555;
+    border-bottom: 1px solid #f8f8f8;
+  }
+
+  .cost-table .winner {
+    background: #f0fdf4;
+    font-weight: 600;
+    color: #2e7d32;
+  }
+
+  .cost-table .loser {
+    color: #dc2626;
+  }
+
+  .cost-verdict {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
+    font-style: italic;
+  }
+
+  /* ─── SIDE EFFECTS ─── */
+  .side-effects-section { padding: 40px 0 60px; }
+
+  .rx-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    border: 2px dashed #e0e0e0;
+    position: relative;
+  }
+
+  .rx-card .rx-symbol {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 48px;
+    color: rgba(192,132,252,0.15);
+    font-family: serif;
+    font-weight: 700;
+  }
+
+  .rx-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+  }
+
+  .rx-card .rx-subtitle {
+    font-size: 12px;
+    color: #bbb;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     margin-bottom: 20px;
   }
 
-  .dog-section p {
+  .rx-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .rx-card ul li {
+    font-size: 14px;
+    color: #666;
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .rx-card ul li::before {
+    content: '⚠️';
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+  }
+
+  .rx-card .fine-print {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 11px;
+    color: #ccc;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ─── VAL + PUP PHOTO ─── */
+  .val-pup-section {
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .val-pup-photo {
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+
+  .val-pup-photo img {
+    width: 100%;
+    display: block;
+  }
+
+  .val-pup-caption {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #888;
     font-style: italic;
+    margin-top: 16px;
+  }
+
+  /* ─── CONFETTI ─── */
+  .confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+    display: none;
+  }
+
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: confettiFall linear forwards;
+  }
+
+  @keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
   }
 
   /* ─── FOOTER ─── */
@@ -548,10 +938,7 @@
       radial-gradient(ellipse at 70% 50%, rgba(248, 164, 184, 0.08) 0%, transparent 60%);
   }
 
-  .footer-content {
-    position: relative;
-    z-index: 2;
-  }
+  .footer-content { position: relative; z-index: 2; }
 
   .footer h2 {
     font-family: 'Playfair Display', serif;
@@ -581,40 +968,6 @@
     45% { transform: scale(1.1); }
   }
 
-  /* ─── CHILDHOOD PHOTO ─── */
-  .childhood-section {
-    padding: 50px 0 20px;
-    text-align: center;
-  }
-
-  .childhood-frame {
-    display: inline-block;
-    background: white;
-    padding: 16px 16px 40px;
-    border-radius: 4px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-    transform: rotate(-2deg);
-    transition: transform 0.3s ease;
-  }
-
-  .childhood-frame:hover {
-    transform: rotate(0deg) scale(1.02);
-  }
-
-  .childhood-frame img {
-    width: 240px;
-    border-radius: 2px;
-    display: block;
-  }
-
-  .childhood-frame .caption {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: #999;
-    font-size: 14px;
-    margin-top: 12px;
-  }
-
   /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
     .product-card { grid-template-columns: 1fr; }
@@ -625,6 +978,10 @@
     .photo-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: 1fr; }
     .hero { min-height: 80vh; }
+    .dog-photos { grid-template-columns: repeat(2, 1fr); }
+    .childhood-grid { gap: 16px; }
+    .childhood-frame img { width: 160px; }
+    .cost-table { font-size: 12px; }
   }
 </style>
 </head>
@@ -646,7 +1003,7 @@
   <div class="photo-grid">
     <div class="photo-card wide">
       <img src="val-dinner.jpg" alt="Val at dinner" loading="lazy">
-      <div class="photo-caption">Always glowing, even before the mask</div>
+      <div class="photo-caption">Already glowing, even before the mask</div>
     </div>
     <div class="photo-card tall">
       <img src="couple-bar.jpg" alt="Us" loading="lazy">
@@ -655,6 +1012,14 @@
       <img src="couple-selfie.jpg" alt="Us" loading="lazy">
     </div>
   </div>
+</div>
+
+<!-- ═══ VAL + PUP SELFIE ═══ -->
+<div class="val-pup-section">
+  <div class="val-pup-photo">
+    <img src="val-pup-selfie.png" alt="Val and the pup" loading="lazy">
+  </div>
+  <p class="val-pup-caption">The two most photogenic members of this household</p>
 </div>
 
 <!-- ═══ INTRO ESSAY ═══ -->
@@ -718,6 +1083,80 @@
   </div>
 </div>
 
+<!-- ═══ GLOW METER ═══ -->
+<div class="glow-meter-section">
+  <div class="container">
+    <div class="glow-meter-card">
+      <h3>Val's Official Glow Rating</h3>
+      <p class="subtitle">According to highly scientific and totally unbiased analysis</p>
+
+      <div class="meter-row">
+        <div class="meter-row-label">Before TheraFace Mask Glo</div>
+        <div class="meter-value">99 / 100</div>
+        <div class="meter-track"><div class="meter-fill" style="animation-delay: 0.5s;"></div></div>
+      </div>
+
+      <div class="meter-row">
+        <div class="meter-row-label">After TheraFace Mask Glo</div>
+        <div class="meter-value">100 / 100</div>
+        <div class="meter-track"><div class="meter-fill maxed" style="animation-delay: 1.5s;"></div></div>
+      </div>
+
+      <div class="meter-labels">
+        <span>Normie</span>
+        <span>Ascending</span>
+        <span>Final Form</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ COST BENEFIT ANALYSIS ═══ -->
+<div class="cost-section">
+  <div class="container">
+    <div class="cost-card">
+      <h3>The Math Doesn't Lie</h3>
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Cost</th>
+            <th>Sessions/Year</th>
+            <th>Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Med Spa LED Facials</td>
+            <td class="loser">$150-300/session</td>
+            <td>24 sessions</td>
+            <td class="loser">$3,600-7,200/year</td>
+          </tr>
+          <tr>
+            <td>Dermatologist LED</td>
+            <td class="loser">$200-500/session</td>
+            <td>12 sessions</td>
+            <td class="loser">$2,400-6,000/year</td>
+          </tr>
+          <tr>
+            <td>Fancy Serums &amp; Creams</td>
+            <td class="loser">$80-200/month</td>
+            <td>12 months</td>
+            <td class="loser">$960-2,400/year</td>
+          </tr>
+          <tr class="winner">
+            <td><strong>TheraFace Mask Glo</strong></td>
+            <td class="winner">$299 once</td>
+            <td>365 sessions</td>
+            <td class="winner">$299 total. Forever.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="cost-verdict">That's $0.82/day for clinically proven results. Less than a coffee. The math is mathing.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ LOOKSMAXXING / CLAV ═══ -->
 <div class="looksmax-section">
   <div class="container-wide">
@@ -737,11 +1176,26 @@
   </div>
 </div>
 
-<!-- ═══ CHILDHOOD PHOTO ═══ -->
+<!-- ═══ CHILDHOOD PHOTOS ═══ -->
 <div class="childhood-section">
-  <div class="childhood-frame">
-    <img src="val-kid.jpg" alt="Little Val">
-    <p class="caption">Always been beautiful &hearts;</p>
+  <div class="childhood-grid">
+    <div class="childhood-frame" onclick="showEasterEgg()">
+      <img src="val-kid.jpg" alt="Little Val">
+      <p class="caption">The original glow-up</p>
+    </div>
+    <div class="childhood-frame" onclick="showEasterEgg()">
+      <img src="val-kid2.png" alt="Little Val">
+      <p class="caption">Already had the look</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ EASTER EGG MODAL ═══ -->
+<div class="easter-egg-overlay" id="easterEgg" onclick="hideEasterEgg()">
+  <div class="easter-egg-msg" onclick="event.stopPropagation()">
+    <h3>Been glowing since day one</h3>
+    <p>Honestly, you've never needed a beauty product in your life. But if science can make perfection even more perfect, why not? You deserve it.</p>
+    <button class="close-btn" onclick="hideEasterEgg()">I know I do</button>
   </div>
 </div>
 
@@ -752,8 +1206,8 @@
     <h2>Clinical Studies</h2>
 
     <div class="study-card">
-      <h3>Collagen Increase & Wrinkle Reduction</h3>
-      <p>A controlled trial found that red and near-infrared light treatment significantly improved fine lines, wrinkles, and skin roughness while increasing intradermal collagen density compared to control groups. Participants reported visibly younger-looking skin.</p>
+      <h3>Collagen Increase &amp; Wrinkle Reduction</h3>
+      <p>A controlled trial found that red and near-infrared light treatment significantly improved fine lines, wrinkles, and skin roughness while increasing intradermal collagen density compared to control groups.</p>
       <p class="source">Source: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3926176/" target="_blank">National Institutes of Health (PMC)</a></p>
     </div>
 
@@ -764,7 +1218,7 @@
     </div>
 
     <div class="study-card">
-      <h3>Skin Elasticity & Rejuvenation</h3>
+      <h3>Skin Elasticity &amp; Rejuvenation</h3>
       <p>A multi-center, randomized, double-blind, sham-controlled study found LED and infrared phototherapy to be effective, safe, well-tolerated, and painless for skin rejuvenation. Skin elasticity was significantly higher in the LED group at 6- and 8-week follow-ups.</p>
       <p class="source">Source: <a href="https://pubmed.ncbi.nlm.nih.gov/39960921/" target="_blank">PubMed &mdash; Randomized Controlled Trial</a></p>
     </div>
@@ -799,22 +1253,133 @@
   </div>
 </div>
 
-<!-- ═══ DOG ═══ -->
-<div class="dog-section">
+<!-- ═══ DOG REVIEW ═══ -->
+<div class="dog-review-section">
   <div class="container">
-    <img src="dog.jpg" alt="The pup" loading="lazy">
-    <p>"I also approve of this gift."</p>
+    <div class="dog-review-card">
+      <div class="dog-review-header">
+        <img src="pup-smile.png" alt="Reviewer">
+        <div class="reviewer-info">
+          <h4>The Pup</h4>
+          <span class="verified">&#10003; Verified Household Member</span>
+        </div>
+      </div>
+      <div class="dog-review-body">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p>"4 out of 5 stars. The red light makes mom's face look warm and cozy, which I appreciate. The scalp massage feature seems relaxing, which means she sits still longer, which means more lap time for me. Knocked off one star because she tried to put it on me once and I am NOT about that life. Also, it arrived in a really nice box that I was not allowed to chew. Overall, would recommend to other dogs' moms."</p>
+        <div class="helpful">&#128077; 47 people found this helpful &nbsp;&nbsp; &#128078; 0</div>
+      </div>
+      <div class="dog-photos">
+        <img src="pup-couch.png" alt="Pup on couch" loading="lazy">
+        <img src="pup-smile.png" alt="Pup smiling" loading="lazy">
+        <img src="pup-sink.png" alt="Pup in sink" loading="lazy">
+        <img src="dog.jpg" alt="Pup outside" loading="lazy">
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- ═══ FOOTER ═══ -->
-<div class="footer">
-  <div class="footer-content">
-    <h2>Happy Birthday, Val</h2>
-    <span class="heart">&hearts;</span>
-    <p class="note">Here's to 32 &mdash; and looking even better than 31.</p>
+<!-- ═══ SIDE EFFECTS ═══ -->
+<div class="side-effects-section">
+  <div class="container">
+    <div class="rx-card">
+      <span class="rx-symbol">Rx</span>
+      <h3>Important Safety Information</h3>
+      <p class="rx-subtitle">Please read before use</p>
+      <ul>
+        <li>Strangers may begin asking for your skincare routine unprompted</li>
+        <li>Friends may experience sudden, unexplained jealousy</li>
+        <li>You may be mistaken for someone in their mid-twenties at restaurants and bars</li>
+        <li>Your boyfriend may feel significantly underdressed standing next to you</li>
+        <li>Sudden urges to post skincare transformation content on Instagram are common</li>
+        <li>The pup may attempt to sit on your face while the mask is on. This is not a feature</li>
+        <li>You may develop an irrational attachment to a glowing face mask and refer to it as "my precious"</li>
+        <li>Compliments from your mother-in-law may increase by 300%. Clinical data pending</li>
+      </ul>
+      <p class="fine-print">TheraFace Mask Glo is not responsible for increased DMs, wedding venue upgrades due to enhanced glow, ruined group photos where you outshine everyone, or any existential crises experienced by friends who didn't get one. If symptoms of extreme beauty persist for more than 12 weeks, congratulations &mdash; the clinical trial says that's expected. Do not operate heavy machinery while looking this good. Consult your boyfriend if smugness exceeds tolerable levels.</p>
+    </div>
   </div>
 </div>
+
+<!-- ═══ CONFETTI CONTAINER ═══ -->
+<div class="confetti-container" id="confettiContainer"></div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer" id="birthdayFooter">
+  <div class="footer-content">
+    <h2>Happy Birthday, Val</h2>
+    <span class="heart">&#10084;</span>
+    <p class="note">Here's to 32 &mdash; and somehow looking even better than 31.</p>
+  </div>
+</div>
+
+<script>
+// ─── Easter Egg ───
+function showEasterEgg() {
+  document.getElementById('easterEgg').classList.add('show');
+}
+function hideEasterEgg() {
+  document.getElementById('easterEgg').classList.remove('show');
+}
+
+// ─── Confetti on Footer ───
+let confettiTriggered = false;
+
+function launchConfetti() {
+  if (confettiTriggered) return;
+  confettiTriggered = true;
+  const container = document.getElementById('confettiContainer');
+  container.style.display = 'block';
+  const colors = ['#c084fc', '#f8a4b8', '#fbbf24', '#34d399', '#60a5fa', '#f472b6', '#a78bfa'];
+
+  for (let i = 0; i < 120; i++) {
+    setTimeout(() => {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + '%';
+      confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.width = (Math.random() * 10 + 6) + 'px';
+      confetti.style.height = (Math.random() * 10 + 6) + 'px';
+      confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+      confetti.style.animationDelay = '0s';
+      container.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 4000);
+    }, i * 30);
+  }
+
+  setTimeout(() => { container.style.display = 'none'; }, 6000);
+}
+
+// Trigger confetti when footer comes into view
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      launchConfetti();
+    }
+  });
+}, { threshold: 0.5 });
+
+observer.observe(document.getElementById('birthdayFooter'));
+
+// ─── Glow meter animation on scroll ───
+const meterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.meter-fill').forEach(el => {
+        el.style.animationPlayState = 'running';
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.glow-meter-card').forEach(el => {
+  el.querySelectorAll('.meter-fill').forEach(fill => {
+    fill.style.animationPlayState = 'paused';
+  });
+  meterObserver.observe(el);
+});
+</script>
 
 </body>
 </html>
